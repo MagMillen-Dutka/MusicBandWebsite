@@ -1,7 +1,4 @@
 /* Reset default margin and padding */
-:root {
-
-}
 
 * {
     margin: 0;
@@ -16,11 +13,10 @@ body {
     background-image: url('/assets/images/BandWebsiteImage.jpg');
     background-repeat:no-repeat;
     background-size: cover;
-    background-position: center bottom; /* Align background image to the center horizontally and to the bottom vertically */
-        min-height: 100vh; /* Set a minimum height of the viewport height */
-        position: relative; /* Ensure relative positioning */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
+    min-height: 100vh;
+        position: relative;
+        margin: 0; 
+        padding: 0; 
 }
 
 
@@ -43,9 +39,19 @@ nav ul li {
     margin-right: 20px;
 }
 
-nav ul li a {
+nav ul li a,
+nav ul li button {
     color: #fff;
     text-decoration: none;
+    background: transparent;
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Add pointer cursor for better user experience */
+    outline: none; /* Remove default button focus outline */
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+    color: #555; /* Button background color on hover */
 }
 
 .hero {
@@ -59,14 +65,12 @@ nav ul li a {
 }
 
 .heroBandPage {
-    text-align: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.loginButton {
+.enterButton {
     color: #fff; /* Ensure text is visible against the background image */
     background-color: rgba(128, 128, 128, 0.515);
     border-radius: 10px 10px 10px 10px;
@@ -89,56 +93,22 @@ nav ul li a {
     font-family: Arial, sans-serif;
 }
 
-.about,
-.music,
-.tour {
-    background-color: #000000d1;
-    color: white;
-    padding: 50px;
-    margin-top: 100px;
-}
-
-.music {
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background color */
-    color: white;
-    /* display: flex; */
-    /* padding: 5px;
-    margin-top: 10px; */
-}
-
 .music-card {
     display: inline-flex;
-    width: calc(20% - 20px); /* Adjust the width as needed */
-    margin: 10px;
+    margin-top: 20px;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+    overflow: contain;
+    width: 275px;
 }
 
-
-.tour {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    
+.music-card iframe {
+    width: 84%; 
+    height: 200px;
+    filter: invert(1);
+    /* margin: 0 auto; */
 }
-
-.tour iframe {
-    max-width: 100%;
-    width: 1600px;
-    height: 350px;
-    filter: invert(1); /* Invert the colors to theme the calendar dark */
-}
-
-@media screen and (max-width: 800px) {
-    .tour {
-        flex-direction: column;
-    }
-
-    .tour iframe {
-        width: 100%;
-        max-width: none;
-    }
+#musicForm {
+    align-items: center;
 }
 
 footer {
@@ -152,6 +122,57 @@ footer {
     color: #fff;
     text-align: center;
     width: 100%;
-    position:relative; /* Position the footer absolutely */
+    position:absolute; /* Position the footer absolutely */
     bottom: 0; /* Align footer to the bottom */
 }
+
+/* Modal section for the bandPage page */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color */
+}
+
+.modal-content {
+    background-color: #00000094; /* White background */
+    color: white;
+    margin: 10% auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    }
+
+#tourForm iframe {
+    filter: invert(1);
+    margin-left: 20px;
+    width: 100%;
+    height: 70vh;
+    align-self: flex-end;
+}
+
+#tourForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #tourForm, #musicForm, #aboutForm, h2 {
+    padding-bottom: 40px;
+  }
+  
+.calendar-container {
+    align-items: left;
+}
+
+.close:hover,
+.close:focus {
+    color: #666;
+    text-decoration: none;
+}
+
+

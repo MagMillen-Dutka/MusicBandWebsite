@@ -1,57 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Website</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Midland Panic</h1>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#tour">Tour</a></li>
-            </ul>
-        </nav>
+      <h1>Midland Panic</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#" onclick="openModal('aboutModal')">About</a></li>
+          <li><a href="#" onclick="openModal('musicModal')">Music</a></li>
+          <li><a href="#" onclick="openModal('tourModal')">Tour</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="heroBandPage">
-        <!-- Content for the hero section can be added here -->
-    </section>
-
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>Midland Panic is a global rock and folk music band known for their eclectic blend of genres and energetic live performances. Formed in the heart of the Midwest, the band has gained a loyal following around the world with their unique sound and heartfelt lyrics.</p>
-        <p>Comprised of talented musicians with diverse musical backgrounds, Midland Panic brings a fresh perspective to the music scene, drawing inspiration from a wide range of influences including classic rock, folk, blues, and indie music.</p>
-    </section>
-
-    <section class="music" id="music">
-        <h2>Our Music</h2>
-        <p>Discover our latest album "Echoes of the Wilderness" featuring a collection of soulful ballads, high-energy anthems, and introspective melodies. Available now on all major streaming platforms.</p>
-        <p>Stay tuned for upcoming singles and collaborations as we continue to explore new musical horizons and connect with our fans through the power of music.</p>
-    
-        <div class="music-card">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0nCAVzknkzRXRgB6LhRv04?utm_source=generator&theme=0" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div id="aboutModal" class="modal" onclick="closeModal('aboutModal')">
+        <div class="modal-content">
+          <form id="aboutForm">
+            <h2>About Us</h2>
+            <p>
+              Midland Panic emerged from the vibrant musical landscape of the
+              Midwest in the early 2000s, a fusion of raw talent, shared
+              passion, and unyielding determination. The band's inception traces
+              back to a small suburban garage where four aspiring musicians,
+              each with a unique story and background, converged to embark on a
+              musical journey that would redefine their lives.
+            </p>
+            <br />
+            <p>
+              At the helm of this musical odyssey were two childhood friends,
+              Alex and Max, who had grown up together immersed in the sounds of
+              classic rock legends echoing through their neighborhood streets.
+              Inspired by the likes of Led Zeppelin, The Rolling Stones, and The
+              Beatles, they shared a dream of creating their own brand of
+              timeless rock music that would resonate with audiences far and
+              wide.
+            </p>
+            <br />
+            <p>
+              Joining forces with them were Sarah and Jake, two prodigious
+              talents discovered through their local music scene. Sarah, a
+              gifted vocalist with a soulful voice that could move mountains,
+              had been performing in local talent shows since she was a child.
+              Jake, a virtuoso guitarist with fingers that danced effortlessly
+              across the fretboard, had honed his craft through years of
+              dedication and practice.
+            </p>
+            <br />
+            <p>
+              Despite their young age—Alex and Max were fresh out of high
+              school, while Sarah and Jake were still in their final years—they
+              possessed a maturity and drive beyond their years. Fueled by a
+              shared love for music and a burning desire to make their mark in
+              the industry, they poured countless hours into songwriting,
+              rehearsing, and perfecting their sound.
+            </p>
+            <br />
+            <p>
+              Their efforts soon paid off as they began to garner attention from
+              local venues and promoters, earning coveted spots opening for
+              established acts and headlining their own shows. With each
+              electrifying performance, Midland Panic's reputation grew, drawing
+              in fans from all walks of life who were captivated by their
+              infectious energy and undeniable talent.
+            </p>
+            <p>
+              As they navigated the highs and lows of the music industry, facing
+              setbacks and triumphs alike, one thing remained constant—their
+              unwavering commitment to their craft and each other. Through sheer
+              determination and a shared belief in their music, Midland Panic
+              transformed from a group of wide-eyed dreamers into a formidable
+              force to be reckoned with in the world of rock music. And as they
+              continue to write their story, the band remains bound by the
+              unbreakable bond forged in that humble suburban garage, united in
+              their passion for creating music that moves the soul.
+            </p>
+          </form>
         </div>
-    
-        <div class="music-card">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/41QhRnFDdhMLtR8tmnolbr?utm_source=generator" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <div id="musicModal" class="modal" onclick="closeModal('musicModal')">
+        <div class="modal-content">
+          <form id="musicForm">
+            <h2>Our Music</h2>
+            <p>
+              Discover our latest album "Echoes of the Wilderness" featuring a
+              collection of soulful ballads, high-energy anthems, and
+              introspective melodies. Available now on all major streaming
+              platforms.
+            </p>
+            <p>
+              Stay tuned for upcoming singles and collaborations as we continue
+              to explore new musical horizons and connect with our fans through
+              the power of music.
+            </p>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/0nCAVzknkzRXRgB6LhRv04?utm_source=generator&theme=0"
+                width="100%"
+                height="200"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/41QhRnFDdhMLtR8tmnolbr?utm_source=generator"
+                width="100%"
+                height="100"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/1vBpwxsLVwaR4evBIaFmqD?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/683SQRqwfRvHyHWuaoOTfh?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/64D3dzWyj0GpQT1AHx4kbK?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/5cY8y2XgOfkAh4kSWLFKkz?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/1tjHKKI0r82IB5KL29whHs?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/1tjHKKI0r82IB5KL29whHs?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/2klLrvEu0OroEWsJWeafWp?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="music-card">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/4npHRnn8NEi6advWvJGSrk?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </form>
         </div>
+      </div>
+
+      <div id="tourModal" class="modal" onclick="closeModal('tourModal')">
+        <div class="modal-content">
+          <form id="tourForm">
+            <h2>Upcoming Tour Dates</h2>
+            <iframe
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FLondon&showDate=0&showPrint=0&showTitle=0&showNav=0&hl=en_GB&src=ZW4udWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23D50000"
+              style="border-width: 0"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <section class="tour" id="tour">
-        <h2>Upcoming Tour Dates</h2>
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FLondon&showDate=0&showPrint=0&showTitle=0&showNav=0&hl=en_GB&src=ZW4udWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23D50000" style="border-width:0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
-    </section>
+    <script src="/assets/js/script.js"></script>
+  </body>
 
-</body>
-
-    <footer class="footerBandPage">
-        <p>&copy; 2024 Midland Panic. All rights reserved.</p>
-    </footer>
-
+  <footer class="footerBandPage">
+    <p>&copy; 2024 Midland Panic. All rights reserved.</p>
+  </footer>
 </html>

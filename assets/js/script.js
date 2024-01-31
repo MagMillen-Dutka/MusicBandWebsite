@@ -1,42 +1,39 @@
 const openSite = () => {
-    const loginButton = document.getElementById('loginButton');
-    loginButton.style.display = 'block';
+    const enterButton = document.getElementById('enterButton');
+    enterButton.style.display = 'block';
 };
 
-function closeModal() {
-    document.getElementById('loginModal').style.display = 'none';
-}
-// Function for screen resolution below 500 turning into fa-drop down
-
-// Function to toggle menu on click
-// Function to toggle menu on click
-// Function to toggle menu on click
-function toggleMenu() {
-    var menuLinks = document.getElementById("menu-links");
-    menuLinks.classList.toggle("show");
+// Function to open modal
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
 }
 
-// Function to close menu
-function closeMenu() {
-    var menuLinks = document.getElementById("menu-links");
-    menuLinks.classList.remove("show");
+// Function to close modal
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
 }
 
-// Event listener for scroll
-window.addEventListener('scroll', function(event) {
-    closeMenu();
-});
-
-// Event listener for resize
-window.addEventListener('resize', function(event) {
-    closeMenu();
-});
-
-// Event listener for click
+// Function to close modals when clicked outside
 window.addEventListener('click', function(event) {
-    var header = document.querySelector('.header');
-    var menuIcon = document.querySelector('.menu-icon');
-    if (!header.contains(event.target) && !menuIcon.contains(event.target)) {
-        closeMenu();
-    }
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
+
+// Function to open each modal on bandPage page
+const aboutLinkModal = () => {
+    openModal('aboutModal');
+};
+
+const musicLinkModal = () => {
+    openModal('musicModal');
+};
+
+const tourLinkModal = () => {
+    openModal('tourModal');
+};
